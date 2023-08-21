@@ -1,0 +1,156 @@
+{% load static %}
+
+<!-- TITLE -->
+<h1 class="results-section__title">Results Section:</h1>
+
+<!-- UPLOAD FILE -->
+<div class="results-section__upload-file input-group-sm">
+  <label class="col-form-label col-form-label-sm">Upload Results:</label>
+  <input
+    id="results-section__input--upload-file"
+    onfocus="results_upload_file_reset();"
+    class="form-control"
+    type="file"
+    onchange="results_upload_file();"
+  />
+  <div id="results-section__input--upload-file__msg" class=""></div>
+</div>
+
+<!-- REPORT -->
+<div class="results-section__report imput-group input-group-sm">
+  <button
+    class="btn btn-success shadow"
+    id="results-section__report--btn"
+    data-bs-toggle="modal"
+    data-bs-target="#modal-report"
+  >
+    <i class="bx bxs-report"></i> Generate Report
+  </button>
+
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      name="report"
+      id="results-section__report--scalar-flux"
+      checked
+    />
+    <label
+      class="form-check-label col-form-label-sm"
+      for="results-section__report--scalar-flux"
+      >Scalar flux</label
+    >
+  </div>
+
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      name="report"
+      id="results-section__report--absorption-rate"
+    />
+    <label
+      class="form-check-label col-form-label-sm"
+      for="results-section__report--absorption-rate"
+      >Absorption rate</label
+    >
+  </div>
+
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      name="report"
+      id="results-section__report--leakage"
+    />
+    <label
+      class="form-check-label col-form-label-sm"
+      for="results-section__report--leakage"
+      >Leakage</label
+    >
+  </div>
+</div>
+
+<!-- PLOT RESULTS -->
+<div class="results-section__plot input-group input-group-sm">
+  <!-- PLOT BUTTON -->
+  <button class="btn btn-success shadow" id="results-section__plot--btn">
+    <i class="bx bx-slideshow"></i> Plot Results
+  </button>
+
+  <div>
+    <!-- PLOT TYPE -->
+    <div class="results-section__plot--type">
+      <label class="col-form-label col-form-label-sm">Plot type:</label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="plot_results"
+          id="results-section__plot--scalar-flux"
+          checked
+        />
+        <label
+          class="form-check-label col-form-label-sm"
+          for="results-section__plot--scalar-flux"
+          >Scalar flux</label
+        >
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="plot_results"
+          id="results-section__plot--absorption-rate"
+        />
+        <label
+          class="form-check-label col-form-label-sm"
+          for="results-section__plot--absorption-rate"
+          >Absorption rate</label
+        >
+      </div>
+    </div>
+
+    <!-- PLOT OPTIONS -->
+    <div class="results-section__plot--options">
+      <label class="col-form-label col-form-label-sm">Plot options:</label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="plot-option__gray"
+          id="results-section__plot--options__gray"
+        />
+        <label
+          class="form-check-label col-form-label-sm"
+          for="results-section__plot--options__gray"
+          >Gray Scale</label
+        >
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="plot-option__proy"
+          id="results-section__plot--options__proy"
+        />
+        <label
+          class="form-check-label col-form-label-sm"
+          for="results-section__plot--options__proy"
+          >XY Projection</label
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DOWNLOAD RESULTS -->
+<div class="results-section__download input-group input-group-sm">
+  <a
+    href="#"
+    class="btn btn-success shadow"
+    id="results-section__download--btn"
+  >
+    <i class="bx bx-download"></i> Download Results
+  </a>
+</div>

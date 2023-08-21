@@ -1,0 +1,85 @@
+
+{% extends "_partials/layout.html" %}
+{% load static %}
+
+<!-- STATIC FILES -->
+{% block styles %}
+    <link href="{% static 'css/1-main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/2-profile-section.css' %}" rel="stylesheet">
+    <link href="{% static 'css/3-setup-section.css' %}" rel="stylesheet">
+    <link href="{% static 'css/4-solution-section.css' %}" rel="stylesheet">
+    <link href="{% static 'css/5-results-section.css' %}" rel="stylesheet">
+
+
+    <link href="{% static 'css/8-modals.css' %}" rel="stylesheet">
+{% endblock %}
+
+<!-- MAIN BODY -->
+{% block body %}
+
+    <!-- SIDE BAR -->
+    {% include 'NTS/1-sidebar.html' %}
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- PROFILE SECTION -->
+        <section id='profile-section'>
+            {% include 'NTS/2-profile-section.html' %}
+        </section>
+
+        <div id="main-content__layout">
+
+            <!-- SETTINGS -->
+            <div id="main-content__layout--settings">
+
+                <!-- SETUP SECTION -->
+                <section id="setup-section">
+                    {% include 'NTS/3-setup-section.html' %}
+                </section>
+
+                <!-- SOLUTION SECTION -->
+                <section id="solution-section">
+                    {% include 'NTS/4-solution-section.html' %}
+                </section>
+
+                <!-- RESULTS SECTION -->
+                <section id="results-section">
+                    {% include 'NTS/5-results-section.html' %}
+                </section>
+
+            </div>
+
+            <!-- MONITOR -->
+            <div id="main-content__layout--monitor">
+                <img id='initial_img' style='width: 80%; height: 80%; object-fit: contain;' src="{% static 'img/monitor.png' %}">
+            </div>
+
+            <!-- CONSOLE -->
+            <div id="main-content__layout--console">
+                <div class="main-content__layout--console__outputs"></div>
+                <form id="main-content__layout--console__form">
+                    <input id="main-content__layout--console__form--cmd" type="text" placeholder="Type 'help' to display the command list" autocomplete="off">
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- MODAL SECTION -->
+    {% include 'NTS/8-modals.html' %}
+
+
+{% endblock %}
+
+<!-- JAVASCRIPT -->
+{% block script %}
+    <script src="{% static 'js/1-scripts.js' %}"></script>
+    <script src="{% static 'js/2-profile-section.js' %}"></script>
+    <script src="{% static 'js/3-setup-section.js' %}"></script>
+    <script src="{% static 'js/4-solution-section.js' %}"></script>
+    <script src="{% static 'js/5-results-section.js' %}"></script>
+
+    <script src="{% static 'js/console.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% load static %}
+
+<!-- PROFILE BANNER -->
+<div class='profile-banner'>
+    <img src="{% static 'img/default.png' %}" alt="Profile image">
+    <h3>{{ user.username }}</h3>
+</div>
+
+<!-- SAVED PROBLEM TABLE -->
+<div class="profile-content">
+    <h4>Saved Problems</h4>
+    <a id="profile-content__refresh-btn" href="javascript:void(0)">Refresh</a>
+</div>
+
+<div id="profile-table" class="table-responsive" style="display: none">
+    <table class="table table-sm">
+        <thead>
+            <tr class="text-nowrap">
+            <th>Name</th>
+            <th>Method</th>
+            <th>Quadrature</th>
+            <th>Mesh</th>
+            <th>Tolerance</th>
+            <th>Date</th>
+            <th width="50"></th>
+            <th width="50"></th>
+            </tr>
+        </thead>
+        <tbody id="profile-reports"></tbody>
+    </table>
+</div>
+
+<!-- MESSAGE -->
+<div id="profile-message">No problem saved yet.</div>
+    

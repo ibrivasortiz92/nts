@@ -1,0 +1,34 @@
+{% extends "_partials/layout.html" %}
+{% load static %}
+
+<!-- STATIC FILES -->
+{% block styles %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-fluid">
+
+		<div class="row">
+
+			<!-- LOGIN CARD -->
+			<div class="col-sm-5 mx-auto p-4 border rounded log-row">
+
+                <!-- LOGIN ICON -->
+				<div class="text-center mb-2">
+                    <i class='bx bxs-message-square-detail log-icon'></i>
+				</div>
+					
+                <!-- MESSAGE -->
+				<div class='alert alert-info text-center' role='alert'>
+                    <span>The requested route is out of our application. Please do not enter invalid URL.</span>
+                </div>
+					
+			</div>
+
+		</div>
+		
+	</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+#results-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* TITLE */
+#results-section .results-section__title {
+    font-size: 1rem;
+}
+
+.results-section__report,
+.results-section__plot {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.results-section__plot > div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.results-section__plot--type,
+.results-section__plot--options {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.results-section__download {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 450px) {
+    .results-section__plot > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .results-section__plot--type,
+    .results-section__plot--options {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .results-section__plot--type > label,
+    .results-section__plot--options > label {
+        width: 100%;
+    }
+    .results-section__plot--type div.form-check,
+    .results-section__plot--options div.form-check {
+        width: 50%;
+    }
+}
+

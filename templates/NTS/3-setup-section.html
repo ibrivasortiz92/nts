@@ -1,0 +1,67 @@
+{% load static %}
+
+<!-- TITLE -->
+<h1 class="setup-section__title">Setup Section:</h1>
+
+<!-- UPLOAD FILE -->
+<div class="setup-section__upload-file input-group-sm">
+    <label class="col-form-label col-form-label-sm">Upload Geometry:</label>
+    <input id="setup-section__input--upload-file" onfocus="setup_upload_file_reset();" class="form-control" type="file" onchange="setup_upload_file();">
+    <div id="setup-section__input--upload-file__msg" class=""></div>
+</div>
+
+<!-- ZONE SETTINGS -->
+<div class="setup-section__zone input-group-sm">
+    <label class="col-auto col-form-label col-form-label-sm">Material Parameters:</label>
+    <button type="button" class="btn btn-success btn-sm shadow" data-bs-toggle="modal" data-bs-target="#modal-zone" onclick="setup_zone_init();">
+        <i class='bx bx-edit'></i>
+    </button>
+</div>
+
+<!-- PHYSICAL REGIONS SETTINGS -->
+<div class="setup-section__physical-regions input-group-sm">
+    <label class="col-auto col-form-label col-form-label-sm">Physical Regions:</label>
+    <button type="button" class="btn btn-success btn-sm shadow" data-bs-toggle="modal" data-bs-target="#modal-physical-regions" onclick="setup_physical_regions_init();">
+        <i class='bx bx-edit'></i>
+    </button>
+</div>
+
+<!-- ZONE MAPPING SETTINGS -->
+<div class="setup-section__zone-map input-group-sm">
+    <label class="col-auto col-form-label col-form-label-sm">Zone Mapping:</label>
+    <button type="button" class="btn btn-success btn-sm shadow" data-bs-toggle="modal" data-bs-target="#modal-zone-map" onclick="setup_zone_map_init();">
+        <i class='bx bx-edit'></i>
+    </button>
+</div>
+
+<!-- SOURCE MAPPING SETTINGS -->
+<div class="setup-section__source-map input-group-sm">
+    <label class="col-auto col-form-label col-form-label-sm">Source Mapping:</label>
+    <button type="button" class="btn btn-success btn-sm shadow" data-bs-toggle="modal" data-bs-target="#modal-source-map" onclick="setup_source_map_init();">
+        <i class='bx bx-edit'></i>
+    </button>
+</div>
+
+<!-- BOUNDARY CONDITION SETTINGS -->
+<div class="setup-section__bc input-group-sm">
+    <label class="col-auto col-form-label col-form-label-sm">Boundary Conditions:</label>
+    <button type="button" class="btn btn-success btn-sm shadow" data-bs-toggle="modal" data-bs-target="#modal-bc" onclick="setup_bc_init();">
+        <i class='bx bx-edit'></i>
+    </button>
+</div>
+
+<!-- DISPLAY GEOMETRY SETTINGS -->
+<div class="setup-section__display-geom">
+    <button class="btn btn-success shadow" onclick="setup_display_geometry();" type="button">
+        <i class='bx bx-slideshow'></i> Display Geometry
+    </button>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="show_mesh">
+        <label class="form-check-label col-form-label-sm" for="show_mesh">Show mesh</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="show_source">
+        <label class="form-check-label col-form-label-sm" for="show_source">Show sources</label>
+    </div>
+</div>
+    

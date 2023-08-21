@@ -1,0 +1,18 @@
+/* TABLES */
+table thead {
+    background: #343a40;
+    color: #f8f9fa;
+}
+table thead tr th {
+font-size: 14px;
+font-weight: 400;
+}
+
+/* INPUTS */
+input[type="text"]:disabled {
+background: white;
+border: none;
+}
+#ng_input:disabled {
+text-align: right;
+}

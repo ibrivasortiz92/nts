@@ -1,0 +1,53 @@
+{% autoescape off %}
+
+Hi {{ user.username }}
+
+This is a notification message. Calculation details:
+
+Name: {{ instance.name }}
+Method: {{ instance.method }}
+Quadrature: {{ instance.quadrature }}
+Mesh: {{ instance.mesh }}
+Tolerance: {{ instance.tolerance }}
+
+Your calculation has been finished with status code {{ status }}.
+
+Status code description:
+{% if status == 0 %}
+OK
+
+{% elif status == 1 %}
+Error: Program usage (server side)
+
+{% elif status == 2 %}
+Error: Incompatible problem configuration (client side)
+
+{% elif status == 3 %}
+Error: Memory allocation (server side)
+
+{% elif status == 4 %}
+Error: Singular matrix (client side)
+
+{% elif status == 5 %}
+Error: Maximum iteration reached (client side)
+
+{% elif status == 6 %}
+Error: Arithmetic precision (client side)
+
+{% elif status == 7 %}
+Error: Server problem.
+
+{% elif status == 8 %}
+Error: Bad request (client side)
+
+{% else %}
+Maximum data storage reached (10). Please, delete previous saved results to free space
+
+{% endif %}
+
+
+Neutron Transport Simulator (NTS) Web Application
+
+NTS Support Team
+
+{% endautoescape %}

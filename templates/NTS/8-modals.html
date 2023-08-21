@@ -1,0 +1,347 @@
+<!-- MODAL ZONES -->
+<div class="modal fade" id="modal-zone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+
+      	<div class="modal-content">
+
+			<!-- TITLE -->
+			<div class="modal-header">
+				<h5 class="modal-title" id="staticBackdropLabel">Material Parameters</h5>
+				<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+        	<div class="modal-body", style="height: 60vh">
+          
+				<!-- ALERT MESSAGE -->
+				<div id="modal-zone__msg" class="alert alert-danger" style="display: none;" role="alert"></div>
+  
+				<!-- NUMBER OF ENERGY GROUPS -->
+				<div class="my-2 py-2 d-flex justify-content-between border-bottom">
+					<span>Energy Groups:</span>
+					<div class="input-group-sm w-25">
+					<input class="form-control" id="ng_input" type="text" value="1" disabled>
+					</div>
+				</div>
+  
+				<!-- MATERIAL PARAMETERS -->
+				<div class="mt-4 d-flex justify-content-between">
+					<span>Material Parameters:</span>
+					<button onclick="setup_zone_add();" class="btn btn-success btn-sm mb-2"><i class='bx bx-plus'></i></button>
+				</div>
+  
+				<!-- TABLE -->
+				<div class="table-responsive mb-5">
+					<table class="table table-sm">
+					<thead>
+						<tr class="text-nowrap">
+						<th>Zone id</th>
+						<th>Total cross section</th>
+						<th>Scattering cross section</th>
+						<th width="50"></th>
+						<th width="50"></th>
+						</tr>
+					</thead>
+					<tbody id="modal-zone__table"></tbody>
+					</table>
+				</div>
+  
+        	</div>
+
+      	</div>
+
+    </div>
+	
+</div>
+
+
+
+<!-- MODAL PHYSICAL REGIONS -->
+<div class="modal fade" id="modal-physical-regions" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="regions_modal" aria-hidden="true">
+
+  	<div class="modal-dialog modal-dialog-scrollable modal-xl">
+
+    	<div class="modal-content">
+
+			<!-- TITLE -->
+			<div class="modal-header">
+				<h5 class="modal-title" id="regions_modal">Physical Regions</h5>
+				<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+      		<div class="modal-body", style="height: 60vh">
+
+				<!-- ALERT MESSAGE -->
+				<div id="modal-physical-regions__msg" class="alert alert-danger" style="display: none;" role="alert"></div>
+
+				<!-- TABLE X TITLE -->
+				<div class="mb-2 mt-2 d-flex justify-content-between">
+					<span>Regions in X:</span>
+					<button onclick="setup_physical_regions_x_add();" class="btn btn-success btn-sm"><i class='bx bx-plus'></i></button>
+				</div>
+
+				<!-- TABLE X -->
+				<div class="table-responsive mb-5">
+					<table class="table table-sm">
+						<thead>
+						<tr class="text-nowrap">
+							<th scope="col">Region id</th>
+							<th scope="col">Length [cm]</th>
+							<th scope="col">Number of cells</th>
+							<th scope="col" width="50"></th>
+							<th scope="col" width="50"></th>
+						</tr>
+						</thead>
+						<tbody id="modal-physical-regions__x-table"></tbody>
+					</table>
+				</div>
+
+				<!-- TABLE Y TITLE -->
+				<div class="mb-2 mt-2 d-flex justify-content-between">
+					<span>Regions in Y:</span>
+					<button onclick="setup_physical_regions_y_add();" class="btn btn-success btn-sm"><i class='bx bx-plus'></i></button>
+				</div>
+
+				<!-- TABLE Y -->
+				<div class="table-responsive mb-5">
+					<table class="table table-sm">
+						<thead>
+						<tr class="text-nowrap">
+							<th scope="col">Region id</th>
+							<th scope="col">Lenght [cm]</th>
+							<th scope="col">Number of cells</th>
+							<th scope="col" width="50"></th>
+							<th scope="col" width="50"></th>
+						</tr>
+						</thead>
+						<tbody id="modal-physical-regions__y-table"></tbody>
+					</table>
+				</div>
+
+      		</div>
+
+    	</div>
+
+  	</div>
+
+</div>
+
+
+
+<!-- MODAL ZONE MAPPING -->
+<div class="modal fade" id="modal-zone-map" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+	<div class="modal-dialog modal-dialog-scrollable modal-xl">
+
+	  	<div class="modal-content">
+
+			<!-- HEADER -->
+			<div class="modal-header">
+				<h5 class="modal-title" id="staticBackdropLabel">Zone Mapping</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+
+			<div class="modal-body", style="height: 60vh">
+  
+				<!-- ALERT MESSAGE -->
+				<div id="modal-zone-map__msg" class="alert alert-danger" style="display: none;" role="alert"></div>
+  
+				<!-- TITLE -->
+				<div class="mb-2 mt-2 d-flex justify-content-between">
+					<span class="font-weight-bold float-left">Mapping of zones by regions:</span>
+				</div>
+  
+				<!-- TABLE -->
+				<div class="table-responsive mb-5">
+					<table class="table table-bordered table-sm">
+						<tbody id="modal-zone-map__table"></tbody>
+					</table>
+				</div>
+  
+			</div>
+
+	  	</div>
+
+	</div>
+
+</div>
+
+
+
+<!-- MODAL SOURCE MAPPING -->
+<div class="modal fade" id="modal-source-map" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+	<div class="modal-dialog modal-dialog-scrollable modal-xl">
+
+	  	<div class="modal-content">
+
+			<!-- HEADER -->
+			<div class="modal-header">
+				<h5 class="modal-title" id="staticBackdropLabel">Source Mapping</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+
+			<div class="modal-body", style="height: 60vh">
+  
+				<!-- ALERT MESSAGE -->
+				<div id="modal-source-map__msg" class="alert alert-danger" style="display: none;" role="alert"></div>
+  
+				<!-- TITLE -->
+				<div class="mb-2 mt-2 d-flex justify-content-between">
+					<span class="font-weight-bold float-left">Mapping of sources by regions:</span>
+				</div>
+  
+				<!-- TABLE -->
+				<div class="table-responsive mb-5">
+					<table class="table table-borderless table-sm">
+					<tbody id="modal-source-map__table"></tbody>
+					</table>
+				</div>
+  
+			</div>
+
+	  	</div>
+
+	</div>
+
+</div>
+
+
+
+<!-- MODAL BOUNDARY CONDITIONS -->
+<div class="modal fade" id="modal-bc" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+	<div class="modal-dialog modal-dialog-scrollable modal-xl">
+
+	  	<div class="modal-content">
+
+			<!-- HEADER -->
+			<div class="modal-header">
+				<h5 class="modal-title" id="staticBackdropLabel">Boundary Conditions</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+
+			<div class="modal-body", style="height: 60vh">
+  
+				<!-- TITLE -->
+				<div class="mb-2 mt-2 d-flex justify-content-between">
+					<span class="font-weight-bold float-left">Boundary conditions:</span>
+				</div>
+  
+				<!-- LEFT -->
+				<div class="row g-3 m-2 text-nowrap">
+					<label class="col-2 col-form-label col-form-label-sm">Left:</label>
+					<div class="col-auto input-group-sm">
+						<select class="form-select" id="bc_left_select">
+							<option selected>Vacuum</option>
+							<option>Reflective</option>
+							<option>Prescribed</option>
+						</select>
+					</div>
+					<div class="col-auto input-group-sm">
+						<input id="bc_left_input" class="col-auto form-control" type="text" value="0" style="display: none;">
+						<div class="invalid-feedback" id="bc_left_err"></div>
+					</div>
+				</div>
+  
+				<!-- RIGHT -->
+				<div class="row g-3 m-2 text-nowrap">
+					<label class="col-2 col-form-label col-form-label-sm">Right:</label>
+					<div class="col-auto input-group-sm">
+						<select class="form-select" id="bc_right_select">
+							<option selected>Vacuum</option>
+							<option>Reflective</option>
+							<option>Prescribed</option>
+						</select>
+					</div>
+					<div class="col-auto input-group-sm">
+						<input id="bc_right_input" class="col-auto form-control" type="text" value="0" style="display: none;">
+						<div class="invalid-feedback" id="bc_right_err"></div>
+					</div>
+				</div>
+  
+				<!-- TOP -->
+				<div class="row g-3 m-2 text-nowrap">
+					<label class="col-2 col-form-label col-form-label-sm">Top:</label>
+					<div class="col-auto input-group-sm">
+						<select class="form-select" id="bc_top_select">
+							<option selected>Vacuum</option>
+							<option>Reflective</option>
+							<option>Prescribed</option>
+						</select>
+					</div>
+					<div class="col-auto input-group-sm">
+						<input id="bc_top_input" class="col-auto form-control" type="text" value="0" style="display: none;">
+						<div class="invalid-feedback" id="bc_top_err"></div>
+					</div>
+				</div>
+  
+				<!-- BOTTOM -->
+				<div class="row g-3 m-2 text-nowrap">
+					<label class="col-2 col-form-label col-form-label-sm">Bottom:</label>
+					<div class="col-auto input-group-sm">
+						<select class="form-select" id="bc_bottom_select">
+							<option selected>Vacuum</option>
+							<option>Reflective</option>
+							<option>Prescribed</option>
+						</select>
+					</div>
+					<div class="col-auto input-group-sm">
+						<input id="bc_bottom_input" class="col-auto form-control" type="text" value="0" style="display: none;">
+						<div class="invalid-feedback" id="bc_bottom_err"></div>
+					</div>
+				</div>
+  
+			</div>
+
+	    </div>
+
+	</div>
+
+</div>
+
+
+
+<!-- MODAL CALCULATION -->
+<div class="modal fade" id="modal-run-calculation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="calc_modal_title" aria-hidden="true">
+
+	<div class="modal-dialog">
+
+	  <div class="modal-content">
+
+		<div class="modal-header">
+			<h5 class="modal-title" id="calc_modal_title">Calculating ...</h5>
+			<button type="button" class="btn-close" id="modal-run__close-calculation" data-bs-dismiss="modal" aria-label="Close" style="visibility: hidden;"></button>
+		</div>
+
+	  </div>
+
+	</div>
+
+</div>
+
+<!-- MODAL REPORT -->
+<div class="modal fade" id="modal-report" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="report_title" aria-hidden="true">
+
+	<div class="modal-dialog modal-dialog-scrollable modal-xl">
+
+	  	<div class="modal-content">
+
+			<div class="modal-header">
+
+		  		<h5 class="modal-title" id="report_title">Results</h5>
+
+		  		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+			</div>
+
+			<div class="modal-body" id="modal-report__content", style="height: 60vh">
+  
+				<!-- ALERT MESSAGE -->
+				<div id="modal-report__msg" class="alert alert-danger" style="display: none;" role="alert"></div>
+  
+			</div>
+
+	  	</div>
+
+	</div>
+
+</div>

@@ -1,0 +1,134 @@
+{% load static %}
+
+<!-- TITLE -->
+<h1 class="solution-section__title">Solution Section:</h1>
+
+<!-- QUADRATURE -->
+<div class="solution-section__quadrature input-group-sm">
+  <label class="col-form-label col-form-label-sm">Quadrature Order:</label>
+  <select
+    id="solution-section__quadrature--select-btn"
+    class="form-select form-select-sm"
+  >
+    <option selected>-</option>
+    <option>2</option>
+    <option>4</option>
+    <option>6</option>
+    <option>8</option>
+    <option>10</option>
+    <option>12</option>
+  </select>
+</div>
+
+<!-- STOPPING CRITERIA -->
+<div class="solution-section__stop-criteria input-group-sm">
+  <label class="col-form-label col-form-label-sm">Stopping Criteria:</label>
+  <input
+    type="text"
+    class="form-control"
+    id="solution-section__stop-criteria--input"
+    value="0.00001"
+  />
+  <div class="" id="solution-section__stop-criteria--msg"></div>
+</div>
+
+<!-- NUMERICAL SCHEME -->
+<div class="solution-section__numerical-scheme input-group-sm">
+  <label class="col-12 col-form-label col-form-label-sm"
+    >Numerical Scheme:</label
+  >
+
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="scheme"
+      id="dd_method"
+      checked
+    />
+    <label class="form-check-label col-form-label-sm" for="dd_method">
+      Diamond Diference (DD) Method
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="scheme" id="cd_method" />
+    <label class="form-check-label col-form-label-sm" for="cd_method">
+      Constant Discontinuous (CD) Method
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="scheme" id="ld_method" />
+    <label class="form-check-label col-form-label-sm" for="ld_method">
+      Linear Discontinuous (LD) Method
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="scheme" id="cn_method" />
+    <label class="form-check-label col-form-label-sm" for="cn_method">
+      Constant Nodal (CN) Method
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="scheme"
+      id="rm_cn_method"
+    />
+    <label class="form-check-label col-form-label-sm" for="rm_cn_method">
+      Response Matrix - Constant Nodal (RM-CN) Method
+    </label>
+  </div>
+
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="scheme"
+      id="rm_lln_method"
+    />
+    <label class="form-check-label col-form-label-sm" for="rm_lln_method">
+      Response Matrix - Linear Linear Nodal (RM-LLN) Method (Experimental)
+    </label>
+  </div>
+</div>
+
+<!-- CALCULATE -->
+<div class="solution-section__calculate input-group-sm">
+  <button class="btn btn-success shadow" id="solution-section__calculate--btn">
+    <i class="bx bx-play-circle"></i> Calculate
+  </button>
+  {% csrf_token %}
+</div>
+
+<!-- CPU OPTION -->
+<div class="solution-section__cpu-option input-group-sm">
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      name="cpu_option"
+      id="solution-section__cpu-option--input-cpu"
+    />
+    <label
+      class="form-check-label col-form-label-sm"
+      for="solution-section__cpu-option--input-cpu"
+    >
+      Compute CPU time for 10 samples
+    </label>
+  </div>
+</div>
+
+<!-- MODAL RUNNING CALCULATION -->
+<button
+  type="button"
+  id="solution-section__running-btn"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#modal-run-calculation"
+  style="visibility: hidden"
+></button>

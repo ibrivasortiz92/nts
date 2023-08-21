@@ -1,0 +1,24 @@
+
+{% extends "_partials/layout.html" %}
+{% load static %}
+
+<!-- STATIC FILES -->
+{% block styles %}
+    <link href="{% static 'css/home-page.css' %}" rel="stylesheet">
+{% endblock %}
+
+<!-- MAIN BODY -->
+{% block body %}
+
+    <div class="box__title">
+        <h1>Neutron Transport Simulator</h1>
+        <h2>Deterministic methods for two-dimensional fixed-source discrete-ordinates transport problems in non-multiplying media</h2>
+    </div>
+    <a class='start-btn' href={% url 'login' %}> Get Started</a>
+
+{% endblock %}
+
+<!-- JAVASCRIPT -->
+{% block script %}
+
+{% endblock %}
